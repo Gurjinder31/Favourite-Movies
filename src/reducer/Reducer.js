@@ -1,6 +1,6 @@
 export const initialState = {
     LikedMovies: [],
-    ButtonToggle: []
+    
 };
 
 // state of application and action is what you gonna do
@@ -21,7 +21,7 @@ const reducer = (state, action) => {
             const index = state.LikedMovies.findIndex(
                 (ListItem) => ListItem.id === action.id
             );
-            // copy LikedMovies into temporary variable newBasket
+            // copy LikedMovies into temporary variable newList
             let newList = [...state.LikedMovies];
 
             if (index >= 0) {
@@ -29,11 +29,11 @@ const reducer = (state, action) => {
                 // at index position splice one item
                 newList.splice(index, 1);
             } else {
-                console.warn(`${action.id} its not in basket! `);
+                console.warn(`${action.id} its not in LikedMovies! `);
             }
 
             return {
-                // new item with remaining item in basket
+                // new item with remaining item in LikedMovies
                 ...state,
                 LikedMovies: newList,
             };
