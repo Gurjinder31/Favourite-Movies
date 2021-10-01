@@ -9,7 +9,7 @@ import Reducer, { initialState } from "./reducer/Reducer";
 ReactDOM.render(
   <React.StrictMode>
     <StateProvider
-      //  intial inital look of data
+      //   inital look of data
       initialState={initialState}
       // reducer is how we manipulate data
       reducer={Reducer}

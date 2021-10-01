@@ -3,7 +3,6 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 
 import { useStateValue } from "./StateProvider";
-import LikedMov from './LikedMov';
 
 
 
@@ -28,8 +27,6 @@ const Movie = ({ id, title, poster_path, overview, vote_average }) => {
 
         // dispatch manipulate data
         // dispatch some action ino data layer
-
-
         if (!likeActive) {
             dispatch({
                 type: "ADD_TO_LIST",
@@ -68,12 +65,8 @@ const Movie = ({ id, title, poster_path, overview, vote_average }) => {
                 <span>{vote_average}</span>
             </div>
             <div className="movie_likeB">
-
                 <ThumbUpIcon id={id} onClick={addToList} className={likeActive ? "movie__thumbsChange" : "movie__thumb"} />
-
                 <span ><ThumbDownIcon onClick={removeFromList} className={dislikeActive === true ? "movie__dthumbsChange" : "movie__dthumb"} /></span>
-
-
             </div>
         </div >
     )

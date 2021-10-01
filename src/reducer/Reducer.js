@@ -11,17 +11,17 @@ const reducer = (state, action) => {
 
             return {
                 ...state,
-                // change basket with add action
+                // change LikedMovies with add action
                 LikedMovies: [...state.LikedMovies, action.item],
 
             };
 
         case "REMOVE_FROM_LIST":
-            // findIndex does any of basket item match action id that just passed in
+            // findIndex does any of LikedMovies item match action id that just passed in
             const index = state.LikedMovies.findIndex(
                 (ListItem) => ListItem.id === action.id
             );
-            // copy basket into temporary variable newBasket
+            // copy LikedMovies into temporary variable newBasket
             let newList = [...state.LikedMovies];
 
             if (index >= 0) {
@@ -33,7 +33,7 @@ const reducer = (state, action) => {
             }
 
             return {
-                // new item whith remaing item in basket
+                // new item with remaining item in basket
                 ...state,
                 LikedMovies: newList,
             };
